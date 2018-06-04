@@ -14,4 +14,6 @@
         Author:  
         Version:  
        */  
+       
+7. Activate theme
 6. Delete default themes
