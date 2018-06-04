@@ -1,2 +1,3 @@
 # WP Notes
-WordPress notes.
+
+[Spin up a custom css WordPress site w/ `local-by-flywheel`](wp-notes/how-to-create-a-custom-css-wordpress-site.md)
