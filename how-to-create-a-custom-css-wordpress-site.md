@@ -4,7 +4,8 @@
 2. Navigate to `wp-content`
 3. Navigate to `themes`
 4. Create a new folder `my-theme`
-5. Add files
+5. Navigate to `my-theme`
+6. Add files
    - `screenshot.png` - must be `1200px` wide by `900px` tall
    - `index.php`
    - `style.css`
@@ -16,4 +17,4 @@
        */  
        
 7. Activate theme
-6. Delete default themes
+8. Delete default themes
