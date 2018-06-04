@@ -1,2 +1,2 @@
-# WP NOTES
+# WP Notes
 WordPress notes.
