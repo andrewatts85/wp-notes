@@ -1,4 +1,4 @@
-# The Famous PHP Loop
+# The Famous WordPress Loop
 
 ```php
 <?php
