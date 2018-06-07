@@ -23,7 +23,7 @@
 
 ---
 
-# `single.php` vs `pages.php`
+# `single.php` vs `page.php`
 [![Screen_Shot_2018-06-06_at_11.04.05_PM.png](https://s15.postimg.cc/80x0ykpqj/Screen_Shot_2018-06-06_at_11.04.05_PM.png)](https://postimg.cc/image/czkjd3tjb/)
 
-WordPress is always on the lookout for different files names in the theme folder. Files named `single.php` and `pages.php` are linked to certain permalinks. For example, clicking on a blog post from `index.php` will navigate you to `single.php`. Clicking on the permalink in the pages section of the wordpress admin with take you to `single.php`.
+WordPress is always on the lookout for different files names in the theme folder. Files named `single.php` and `page.php` are linked to certain permalinks. For example, clicking on a blog post from `index.php` will navigate you to `single.php`. Clicking on the permalink in the pages section of the wordpress admin with take you to `single.php`.
