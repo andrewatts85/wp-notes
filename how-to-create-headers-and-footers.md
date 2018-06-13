@@ -45,3 +45,28 @@ To create the footer we are going to finish the adding the rest of the closing t
   add_action('wp_enqueue_scripts', 'university_files')
 ```
 2. Use the WP function `get_stylesheet_uri()` to get the url for your stylesheet.
+
+# Include your Header and Footer
+
+Use WP functions `get_footer()` and `get_header()` in your php files where needed to included the header and footer.
+
+# Tip
+
+To power refresh and clear the cache to help bring in your css press: `shift` + `cmd` + `r`
+
+# WP Files
+
+- `footer.php`
+- `headerphp`
+- `single.php`
+- `pages.php`
+- `functions.php`
+
+# WP Functions/Code
+
+- `get_footer()`
+- `get_header()`
+- `wp_head()`
+- `get_stylesheet_uri()`
+- `wp_enqueue_scripts('stylesheet_nickname', URL)`
+- `add_action('wp_hook_name', 'custom_func')`
