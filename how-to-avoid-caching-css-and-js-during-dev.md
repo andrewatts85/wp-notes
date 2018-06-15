@@ -33,3 +33,12 @@ The `microtime()` function will return a unique timestamp in microseconds. **So 
 
 Note: Don't do this for production sites. You can also use Chrome Dev Tools and disable caching but this will disable caching for EVERYTHING. Not individual files.
 
+# WP Files
+
+- `functions.php`
+
+# WP Fucntions/Code
+
+- `wp_enqueue_script()`
+- `wp_enqueue_style()`
+- `microtime()`
