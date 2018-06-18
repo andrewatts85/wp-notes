@@ -1,4 +1,4 @@
-## How To Setup A Custom CSS WordPress Site
+# How To Setup A Custom CSS WordPress Site
 
 1. Create a new site in `local-by-flywheel`
 2. Navigate to `wp-content`
