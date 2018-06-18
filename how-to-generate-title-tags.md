@@ -9,3 +9,13 @@ function university_features() {
 
 add_action('after_setup_theme', 'university_features');
 ```
+
+## Tip
+
+### site_url()
+
+The `sit_url()` function will automatically give you the root url of your current WordPress site. Anything included as an argument will get added on to it. **If no arguments are provided then the root or home url will be returned.**
+
+```php
+<li><a href="<?php echo sit_url('/about-us'); ?>"></a></li>
+```
