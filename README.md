@@ -9,4 +9,7 @@
 
 
 ## Tip
-Is your local (flywheel) stuck? Quit local, open VirtualBox then turned off the local machine. Reopen local (flywheel).
+Is your local (flywheel) stuck? Quit local, open VirtualBox then turned off the local machine. Reopen local (flywheel).  
+
+## Cheat Sheet
+[Sexy WordPress Cheat Sheet](https://premium.wpmudev.org/blog/developer-super-cheat-sheet/)
