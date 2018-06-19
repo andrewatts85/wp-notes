@@ -56,3 +56,7 @@ add_action('after_setup_theme', 'university_features');
 ```
 
 5. After adding `wp_nav_menu()` to your `header.php` or `footer.php` file, you will be able to access the `Menus` link in your WordPress Admin dashboard in the `Appearance` section. You can now customize menus from the admin dashboard.
+
+## Tip
+
+You can changed the color of active links by modifying the `.current-menu-item` class in your css.
