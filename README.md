@@ -6,6 +6,7 @@
 [How to avoid caching css and js during dev](/how-to-avoid-caching-css-and-js-during-dev.md)  
 [How to create an interior page template](/how-to-create-an-interior-page-template.md)  
 [How to generate title tags](how-to-generate-title-tags.md)  
+[How to improve your header](/how-to-improve-your-header.md)  
 
 
 ## Tip
