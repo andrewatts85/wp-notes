@@ -12,7 +12,7 @@ function menu_feature() {
 
 add_action('after_setup_theme', 'menu_feature');
 ```
-3. Next, add `register_nave_menu(arg1, arg2)` to your function. The first argument can be a made up name. **The second argument will show up in the WordPress admin screen**. You can make up the name for this argument as well.
+3. Next, add `register_nav_menu(arg1, arg2)` to your function. The first argument can be a made up name. **The second argument will show up in the WordPress admin screen**. You can make up the name for this argument as well:
 
 ```php
 function menu_feature() {
@@ -21,7 +21,7 @@ function menu_feature() {
 
 add_action('after_setup_theme', 'menu_feature');
 ```
-4. Comment the nav links out in the `header.php` file. Enter php mode and insert the WordPress function `wp_nave_menu()` like so. Remember, this function takes an associative array as an argument.
+4. Comment the nav links out in the `header.php` file. Enter php mode and insert the WordPress function `wp_nave_menu()` like so. Remember, this function takes an associative array as an argument:
 
 ```php
 <nav class="main-navigation">
@@ -43,7 +43,7 @@ add_action('after_setup_theme', 'menu_feature');
 </nav>
 ```
 
-You can set up as many menu locations as you like within the same function.
+You can set up as many menu locations as you like within the same function:
 ```php
 function university_features() {
   register_nav_menu('headerMenuLocation', 'Header Menu Location');
@@ -55,3 +55,4 @@ function university_features() {
 add_action('after_setup_theme', 'university_features');
 ```
 
+5. After adding `wp_nav_menu()` to your `header.php` or `footer.php` file, you will be able to access the `Menus` link in your WordPress Admin dashboard in the `Appearance` section. You can now customize menus from the admin dashboard.
