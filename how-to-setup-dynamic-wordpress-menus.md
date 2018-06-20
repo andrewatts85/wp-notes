@@ -70,3 +70,11 @@ To highlight the selected nav link while viewing that page you have to use an `i
 ```
 
 The `current-menu-item` class can be any class just make sure you have the appropriate css rules to change the color.
+
+## Children Pages
+
+Use this `if` statement to include child pages. When the child page is being viewed. the parent page link will still light up.
+
+```php
+<li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 14) echo 'class="current-menu-item"'; ?>><a></a></li>
+```
