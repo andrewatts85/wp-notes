@@ -73,7 +73,7 @@ The `current-menu-item` class can be any class just make sure you have the appro
 
 ## Children Pages
 
-Use this `if` statement to include child pages. When the child page is being viewed. the parent page link will still light up.
+Use this `if` statement to include child pages. When the child page is being viewed. the parent page link will still be highlighted. The numbers 0 and 14 represent the post ID's. The argument 0 can be static but 14 is the post id for the parent page you would like to remain highlighted.
 
 ```php
 <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 14) echo 'class="current-menu-item"'; ?>><a></a></li>
