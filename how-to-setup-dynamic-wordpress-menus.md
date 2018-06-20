@@ -60,3 +60,13 @@ add_action('after_setup_theme', 'university_features');
 ## Tip
 
 You can changed the color of active links by modifying the `.current-menu-item` class in your css.
+
+## How to Highlight the Selected Nav Link while Viewing the Selected Page
+
+To highlight the selected nav link while viewing that page you have to use an `if` statement. This is where the `is_page()` WordPress function comes in handy. Make sure you check the slug for the page and insert that as an argument. Follow the code below like so:
+
+```php
+<li <?php if(is_page('about-us')) echo 'class="current-menu-item"' ?>><a></a></li>
+```
+
+You `current-menu-item` class can be any class just make sure you have the appropriate css rules to change the color.
