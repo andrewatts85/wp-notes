@@ -25,5 +25,8 @@ When setting up blog links you'll probably be using `the_content()` to display t
 
 ### the_author_posts_link()
 
-Use this function to return the author resposible for a post. You can update the way the user name is displayed by navigating to `Users` in `wp-admin`, then update the `Nickname` and `Display name publicly as` fields.
+Use this function to return the author resposible for a post. You can update the way the user name is displayed by navigating to `Users` in `wp-admin`, then update the `Nickname` and `Display name publicly as` fields.  
 
+### the_time()
+
+Use the `the_time()` function to dynamically output the date or time of each post.
