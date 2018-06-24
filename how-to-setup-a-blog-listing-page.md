@@ -30,7 +30,7 @@ Use this function to return the author resposible for a post. You can update the
 
 Use the `the_time()` function to dynamically output the date or time of each post.
 
-### get_the_category_list()
+### get_the_category_list(', ')
 
 This function will dynamically (`echo`) output the post category.
 
