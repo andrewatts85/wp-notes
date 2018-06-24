@@ -8,6 +8,7 @@
 [How to generate title tags](how-to-generate-title-tags.md)  
 [How to improve your header](/how-to-improve-your-header.md)  
 [How to setup dynamic WordPress menus](/how-to-setup-dynamic-wordpress-menus.md)  
+[How to setup a blog listing page](/how-to-setup-a-blog-listing-page.md)  
 
 
 ## Tip
