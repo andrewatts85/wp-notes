@@ -16,5 +16,7 @@ Is your local (flywheel) stuck? Quit local, open VirtualBox then turned off the 
 
 ## Cheat Sheet
 [WordPress Developer Super Cheat Sheet](https://premium.wpmudev.org/blog/developer-super-cheat-sheet/)  
+
+## Tools
 [Hipster Ipsum](https://hipsum.co/?paras=2&type=hipster-centric)  
 [Postimage](https://postimages.org/)
