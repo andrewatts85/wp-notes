@@ -7,7 +7,6 @@ By default WordPress makes your homepage a generic blog listing but we don't wan
 1. Start by accessing your wp-admin dashboard. Create two new pages called `Home` and `Blog`.
 2. Now navigate to `Settings` and click the `Reading` option. This is where you tell WordPress where your Homepage or front-page should display. By default it is set to `Your latest posts`. Instead click the `static page` option so that we can manually set the front-page and post-page.
 3. Set the `Homepage` to the `Home` page you just created. Then set the `Posts page` to the `Blog` page you also just created and save your changes.  
-4. If you started 
 
 [![Screen_Shot_2018-06-22_at_5.09.12_PM.png](https://s15.postimg.cc/8x8eeeozf/Screen_Shot_2018-06-22_at_5.09.12_PM.png)](https://postimg.cc/image/m1dyr3h13/) . 
 
