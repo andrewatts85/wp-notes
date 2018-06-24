@@ -30,3 +30,11 @@ Use this function to return the author resposible for a post. You can update the
 ### the_time()
 
 Use the `the_time()` function to dynamically output the date or time of each post.
+
+### get_the_category_list()
+
+This function will dynamically (`echo`) output the post category.
+
+### WordPress Functions that Start with `get`
+
+Wordpress function names that start with `get` will return the result instead of `echo`ing it out to the page. Make sure you use `echo` when dropping into `php` mode to output the function result.
