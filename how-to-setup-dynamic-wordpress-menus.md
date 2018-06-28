@@ -69,7 +69,13 @@ To highlight the selected nav link while viewing that page you have to use an `i
 <li <?php if(is_page('about-us')) echo 'class="current-menu-item"' ?>><a></a></li>
 ```
 
-The `current-menu-item` class can be any class just make sure you have the appropriate css rules to change the color.
+The `current-menu-item` class can be any class just make sure you have the appropriate css rules to change the color.  
+
+This code also works.
+
+```php
+<li <?php if (get_post_type() == 'post') echo 'class="current-menu-item"'; ?>><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
+```
 
 ## Children Pages
 
