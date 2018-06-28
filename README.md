@@ -10,7 +10,8 @@
 [How to setup dynamic WordPress menus](/how-to-setup-dynamic-wordpress-menus.md)  
 [How to setup a blog listing page](/how-to-setup-a-blog-listing-page.md)  
 [How to setup pagination](/how-to-setup-pagination.md)  
-[How to setup blog archives (archive.php)](/how-to-setup-blog-archives.md)
+[How to setup blog archives (archive.php)](/how-to-setup-blog-archives.md)  
+[How to create custom queries](/how-to-create-custom-queries.md)
 
 
 ## Tip
