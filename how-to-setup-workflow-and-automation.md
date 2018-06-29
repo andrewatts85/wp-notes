@@ -28,7 +28,7 @@ You can check to see if it's installed by typing this command:
 gulp -v
 ```
 
-# 
+# Apply These Tools to WordPress
 
 Now that we have `Node.js` and `Gulp`, we just need to apply these tools to our WordPress project so we can benefit from automation. To do this:  
 
