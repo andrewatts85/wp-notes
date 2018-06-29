@@ -60,7 +60,7 @@ Now your browser will automatically refresh and update everytime a change is sav
 
 ## Tip
 
-If your phone and computer are on the same wifi, you can preview your wordpress site on your phone by using a special url from the terminal provided by the `gulp watch` command. Just enter the url inside the red box into your phones browser to pull up the site.
+If your phone and computer are on the same wifi, you can preview your wordpress site on your phone by using a special url from the terminal provided by the `gulp watch` command. Just enter the external url inside the red box into your phones browser to pull up the site.
 
 [![Screen_Shot_2018-06-28_at_5.49.54_PM.png](https://s15.postimg.cc/llmnrfqqj/Screen_Shot_2018-06-28_at_5.49.54_PM.png)](https://postimg.cc/image/gzqjj357b/)
 
