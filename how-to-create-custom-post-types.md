@@ -13,6 +13,7 @@ By default out of the box WordPress websites only come with two post-types, `pos
 4. After that, navigate to your `wp-admin` dashboard and click refresh. Your custom post-type will show up in the `wp-admin` menu to the left.
     
 ```php
+// functions.php
 function university_post_types() {
   register_post_type('event', array(
     'public' => true,
