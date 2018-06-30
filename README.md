@@ -12,7 +12,8 @@
 [How to setup pagination](/how-to-setup-pagination.md)  
 [How to setup blog archives (archive.php)](/how-to-setup-blog-archives.md)  
 [How to create custom queries](/how-to-create-custom-queries.md)  
-[How to setup workflow and automation](/how-to-setup-workflow-and-automation.md)
+[How to setup workflow and automation](/how-to-setup-workflow-and-automation.md)  
+[How to create custom post types](/how-to-create-custom-post-types.md)
 
 
 ## Tip
@@ -22,5 +23,5 @@ Is your local (flywheel) stuck? Quit local, open VirtualBox then turned off the 
 [WordPress Developer Super Cheat Sheet](https://premium.wpmudev.org/blog/developer-super-cheat-sheet/)  
 
 ## Tools
-[Hipster Ipsum](https://hipsum.co/?paras=2&type=hipster-centric)  
+[Lorem Ipsum](https://loremipsum.io/)  
 [Postimage](https://postimages.org/)
