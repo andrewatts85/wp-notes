@@ -38,7 +38,7 @@ The best way of handling custom post-types is by leveraging something in WordPre
 
 1. Navigate to your local site `wp-content` folder.
 2. Create a new folder called `mu-plugins`. Any `php` files that we include within this `mu-plugins` folder will be automatically and always loaded and activated by WordPress.
-3. Create a new `php` file in `mu-plugins` and give it a meaningful name such as `university-post-types.php`.
-4. Remove you custom post-type function including the action from `functions.php` and put it in the new `university-post-types.php` file located in the `mu-plugins` folder we just created.
+3. Create a new `php` file in the `mu-plugins` folder and give it a meaningful name such as `university-post-types.php`.
+4. Remove your custom post-type function including the `action` from `functions.php` and put it in the new `university-post-types.php` file located in the `mu-plugins` folder we just created.
 
 Now we don't have to worry about accidentally being locked out of editing custom content.
