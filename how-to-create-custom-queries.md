@@ -38,7 +38,7 @@ You can use the WordPress function `wp_trim_words()` to trim the content. It tak
 
 ## wp_reset_postdata()
 
-After you've created your custom query and used it in a while loop, right after that while loop ends, you must get in the habit of calling `wp_reset_postdata()`. This will reset WordPress data and global variables back to normal. It's not 100% necessary but should it be done anyway.
+After you've created your custom query and used it in a while loop, right after that while loop ends, you must get in the habit of calling `wp_reset_postdata()`. This will reset WordPress data and global variables back to normal. It's not 100% necessary but should be done anyway.
 
 ```php
 <?php
