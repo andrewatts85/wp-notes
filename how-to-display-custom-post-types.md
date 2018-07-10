@@ -37,3 +37,7 @@ function university_post_types() {
 
 add_action('init', 'university_post_types');
 ```
+
+## archive-[insert custom post-type here].php
+
+Create a custom archive for your post-type by creating a new file in your theme call `archive-events.php` or whatever the name of your post-type is. Then copy over the code from the regular `archive.php` file and start from there.
