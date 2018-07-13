@@ -32,3 +32,12 @@ You can create custom fields manually with the code above or you can be smart an
 
 - Advanced Custom Fields (ACF)
 - CMB2 (Custom Metaboxes 2)
+
+You can access these fields with `php` by using the WordPress function `the_field('event_date')`. You can use this script to easily format the dates.
+
+```php
+<?php
+  $eventDate = new DateTime(get_field('event_date'));
+  echo $eventDate->format('M');
+?>
+```
