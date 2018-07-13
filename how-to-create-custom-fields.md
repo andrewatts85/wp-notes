@@ -1,6 +1,6 @@
 # How to Create Custom Fields
 
-There are two ways you can create custome fields. You can do it by editing your `mu-plugins` file or you can use a WordPress plugin. To do it with code just add a `supports` keyword to your associative array and the `custom-fields` item to its array list.
+There are two ways you can create custom fields. You can do it by editing your `mu-plugins` file or you can use a WordPress plugin. To do it with code just add a `supports` keyword to your associative array and the `custom-fields` item to its array list.
 
 ```php
 <?php
@@ -27,6 +27,8 @@ add_action('init', 'university_post_types');
 ```
 
 ## Industry Standard (Custom Field) Plugins
+
+You can create custom fields manually with the code above or you can be smart and not reinvent the wheel and use one of these two popular plugins.
 
 - Advanced Custom Fields (ACF)
 - CMB2 (Custom Metaboxes 2)
