@@ -11,9 +11,9 @@ Now that the permalinks are updated you should be able to navigate to post with 
 
 You can power custom post-types with a custom template by creating a file called `single-[post-type].php`. So for instance say you created a new custom post-type called `Events`. To make a new `single.php` template for that, you would create a new file in your custom theme folder called `single-event.php`. Start off by including the header and footer then style as you please.
 
-## rewrite & has_archive
+## rewrite, has_archive, & supports
 
-Navigate to `mu-plugins`. You can edit your custom post-type and add `has_archive` and `rewrite` to setup the archive properly.
+Navigate to `mu-plugins`. You can edit your custom post-type and add `has_archive`, `rewrite`, and `supports` to setup the archive properly.
 
 
 ```php
@@ -21,6 +21,7 @@ Navigate to `mu-plugins`. You can edit your custom post-type and add `has_archiv
 
 function university_post_types() {
   register_post_type('event', array(
+    'supports' => array('title', 'editor', 'excerpt'), => will enable support for `excerpts`.
     'rewrite' => array('slug' => 'events'), // => with this you can create a custom slug whether it be plural or singular
     'has_archive' => true,  // => will provide the archive url 
     'public' => true,
