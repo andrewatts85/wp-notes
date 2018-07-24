@@ -16,6 +16,7 @@
 [How to create custom post types](/how-to-create-custom-post-types.md)  
 [How to display custom post types](/how-to-display-custom-post-types.md)  
 [How to create custom fields](/how-to-create-custom-fields.md)  
+[How to sort custom queries](/how-to-sort-custom-queries.md)
 
 
 ## Tip
