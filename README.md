@@ -14,8 +14,8 @@
 [How to create custom queries](/how-to-create-custom-queries.md)  
 [How to setup workflow and automation](/how-to-setup-workflow-and-automation.md)  
 [How to create custom post types](/how-to-create-custom-post-types.md)  
-[How to display custom post types](/how-to-display-custom-post-types.md)
-[How to create custom fields](/how-to-create-custom-fields.md)
+[How to display custom post types](/how-to-display-custom-post-types.md)  
+[How to create custom fields](/how-to-create-custom-fields.md)  
 
 
 ## Tip
