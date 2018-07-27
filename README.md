@@ -18,7 +18,8 @@
 [How to create custom fields](/how-to-create-custom-fields.md)  
 [How to sort custom queries](/how-to-sort-custom-queries.md)  
 [How to edit default queries](/how-to-edit-default-queries.md)  
-[How to add new custom pages](/how-to-add-new-custom-pages.md)
+[How to add new custom pages](/how-to-add-new-custom-pages.md)  
+[How to setup pagination for custom queries](/how-to-setup-pagination-for-custom-queries.md)
 
 
 ## Tip
