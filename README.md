@@ -19,7 +19,8 @@
 17. [How to sort custom queries](notes//how-to-sort-custom-queries.md)  
 18. [How to edit default queries](notes//how-to-edit-default-queries.md)  
 19. [How to add new custom pages](notes//how-to-add-new-custom-pages.md)  
-20. [How to setup pagination for custom queries](notes//how-to-setup-pagination-for-custom-queries.md)
+20. [How to setup pagination for custom queries](notes//how-to-setup-pagination-for-custom-queries.md)  
+21. [How to create relationships between content](notes/how-to-create-relationships-between-content.md)  
 
 
 ## Tip
