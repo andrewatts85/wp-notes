@@ -1,6 +1,6 @@
 # How to Edit Default Queries
 
-When manipulating queries in WordPress, it is important to know when to write new custom queries and when to just edit the default query in suttle ways. If there is already a default query in use just edit it to work how you want it too instead of creating a new custom query. This will ensure that your pagination is working correctly.  
+When manipulating queries in WordPress, it is important to know when to write new custom queries and when to just edit the default query in suttle ways. If there is already a default query in use just edit it to work how you want it to instead of creating a new custom query. This will ensure that your pagination is working correctly.  
 
 To edit a default query, navigate over to your `functions.php` file and add an action (`add_action();`). The name of the WordPress event that we want to hook onto is `pre_get_posts`.
 
