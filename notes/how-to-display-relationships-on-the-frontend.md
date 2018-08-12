@@ -1,16 +1,16 @@
 # How to Display Relationships on the Frontend
 
 1. After setting up your custom field, pay special attention to the `Post Type` and `Location` rules you set up for it.  
-2. Selecting a `Post Type` for that rule will give the custom field you created a list for accessing all the post from the selected `Post Type` rule. These Post can be used as categories for your relationships  
-3. The `Location` you set up for the custom field to show up at will be the `single-*.php` file you want to edit. Ex: `single-event.php`  
+2. The `Location` you set up for the custom field to show up at will be the `single-*.php` file you want to edit. Ex: `single-event.php`  
+3. Selecting a `Post Type` for that rule will give the custom field you created a list for accessing all the post from the selected `Post Type` rule. These Post can be used as categories for your relationships  
 
-## Display the Custom Field w/ `getField()`
+## Display the Custom Field w/ `getField()` (Location)
 4. Navigate to `single-*.php` in your text editor. Go to the line you want to display the info and enter php mode.
 5. Create a new variable to hold `get_field('enter_Field_Name')`. You can look up the field name of your custom field in your WordPress admin. If you want to see what lives inside a variable, php has a function called `print_r($variable)` that will give you information on that variable
 
 ```php
 <?php
-  $relatedPrograms = getField('related_programs'); // Array
+  $relatedPrograms = getField('related_programs'); //=> Array
   // print_r($relatedPrograms);
 ?>
 ```
@@ -43,5 +43,65 @@
     
     echo '</ul>';
   }
+?>
+```
+
+## Display the Custom Field (Post Type)
+
+The post that the related links link to on the other end are not yet aware of its related post. So lets fix that. We can create a Custom Field for the other end to point back to the `Location` but that would require double the work. The solution is to use a `custom querie` to reference the relationship.  
+
+10. Navigate to the `single-*.php` file in your text editor. Subsitute the `*` for the `Post Type` you selected when you set up your custom field. Ex: `single-program.php` Begin coding your `custom querie` on the line you want it to show up on
+
+```php
+<?php
+  // Custom query
+  $today = date('Ymd');
+  $homepageEvents =  new WP_Query(array(
+    'posts_per_page' => 2,
+    'post_type' => 'event',
+    'meta_key' => 'event_date',
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC',
+    
+    // Filter that only returns upcoming post (events)
+    'meta_query' => array(
+      array(
+        'key' => 'event_date',
+        'compare' => '>=',
+        'value' => $today,
+        'type' => 'numeric'
+      ),
+      
+      // Another filter that only returns post that mention a relationship to the current program
+      array(
+        'key' => 'related_programs',
+        'compare' => 'LIKE',
+        'value' => '"' . get_the_ID() . '"'
+      )
+    )
+  ));
+  
+  // WordPres loop 
+  while($homepageEvents->have_posts()) {
+    $homepageEvents->the_post(); ?>
+    <div class="event-summary">
+      <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
+        <span class="event-summary__month"><?php
+          $eventDate = new DateTime(get_field('event_date'));
+          echo $eventDate->format('M');
+        ?></span>
+        <span class="event-summary__day"><?php echo $eventDate->format('d'); ?></span>
+      </a>
+      <div class="event-summary__content">
+        <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+        <p><?php if (has_excerpt()) {
+          echo get_the_excerpt();
+        } else {
+          echo wp_trim_words(get_the_content(), 18);
+        } ?> <a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a></p>
+      </div>
+    </div>
+
+  <?php } wp_reset_postdata();
 ?>
 ```
