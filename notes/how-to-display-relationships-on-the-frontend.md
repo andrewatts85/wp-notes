@@ -52,6 +52,22 @@ The post that the related links link to on the other end are not yet aware of it
 
 10. Navigate to the `single-*.php` file in your text editor. Subsitute the `*` for the `Post Type` you selected when you set up your custom field. Ex: `single-program.php` Begin coding your `custom querie` on the line you want it to show up on
 
+11. Add a filter to the custom query that looks for references (relationships) to the post. To do so just edit the `meta_query` in your `custom query`
+
+```php
+  // This code should be included in your custom query. You can add multiple filters to the meta_query part of your custom query
+  'meta_query' => array(
+      // Filter that only returns post that mention a relationship to the current program
+      array(
+        'key' => 'related_programs', // enter the field_name
+        'compare' => 'LIKE',
+        'value' => '"' . get_the_ID() . '"' // get the post id
+      )
+    )
+```
+
+12. Full example
+
 ```php
 <?php
   // Custom query
