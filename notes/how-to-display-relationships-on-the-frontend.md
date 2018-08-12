@@ -28,6 +28,7 @@
 ```
 
 8. From here you are able to style and format the output by flipping back from php to html mode and so forth
+9. Make sure you only run the code if it actually does have related programs or WordPress will throw an error. You can do so with an `if` statement to avoid this
 
 ```php
 <?php
