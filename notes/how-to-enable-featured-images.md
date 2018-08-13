@@ -81,7 +81,7 @@ function university_features() {
 add_action('after_setup_theme', 'university_features');
 ```
 
-## Retro Actively Create New Images Sizes w/ Regenerate Thumbnails Plugin
+## Retro Actively Create New Image Sizes w/ Regenerate Thumbnails Plugin
 
 9. Download and activate `Regenerate Thumbnails`
 10. Hover over the `Tools` option and select `Regen. Thumbnails`
