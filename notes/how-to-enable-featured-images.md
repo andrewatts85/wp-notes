@@ -86,3 +86,12 @@ add_action('after_setup_theme', 'university_features');
 9. Download and activate `Regenerate Thumbnails`
 10. Hover over the `Tools` option and select `Regen. Thumbnails`
 11. Click `Regenerate All Thumbnails` to create new sizes for all images
+
+## How to Use Your Custom Image Files on the Frontend
+12. To use your custom image files that are defined in the `functions.php` file by `add_image_size()`, use the custom name from the `add_image_size()` function as an argument for `the_post_thumbnail()` function
+
+```php
+<div>
+  <?php the_post_thumbnail('professorPortrait'); ?>
+</div>
+```
