@@ -61,3 +61,28 @@ add_action('init', 'university_post_types');
 ```php
 <img src="<?php the_post_thumbnail_url(); ?>">
 ```
+
+## How to Make Image Size Adjustable
+
+8. You can adjust featured image sizes by editing your `functions.php` file. Use the `add_image_size()` method to do so.  
+**Reference:** `add_image_size('customName', 'pxWide', 'pxTall', 'crop')`
+
+```php
+// This function provides the title tag to be displayed on browser tabs
+// This function also enables featured images on WordPress post
+// This function also enables adjustable image sizes
+function university_features() {
+  add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+  add_image_size('professorLandscape', 400, 260, true); 
+  add_image_size('professorPortrait', 480, 650, true);
+}
+
+add_action('after_setup_theme', 'university_features');
+```
+
+## Retro Actively Create New Images Sizes w/ Regenerate Thumbnails Plugin
+
+9. Download and activate `Regenerate Thumbnails`
+10. Hover over the `Tools` option and select `Regen. Thumbnails`
+11. Click `Regenerate All Thumbnails` to create new sizes for all images
