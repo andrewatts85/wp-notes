@@ -24,6 +24,7 @@
 22. [How to display relationships on the frontend](notes/how-to-display-relationships-on-the-frontend.md)  
 23. [How to enable featured images](notes/how-to-enable-featured-images.md)  
 24. [How to setup a dynamic background image](notes/how-to-setup-a-dynamic-background-image.md)  
+25. [How to reduce duplicate code](notes/how-to-reduce-duplicate-code.md)
 
 
 ## Tip
