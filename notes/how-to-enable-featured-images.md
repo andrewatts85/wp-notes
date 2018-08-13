@@ -88,10 +88,11 @@ add_action('after_setup_theme', 'university_features');
 11. Click `Regenerate All Thumbnails` to create new sizes for all images
 
 ## How to Use Your Custom Image Files on the Frontend
-12. To use your custom image files that are defined in the `functions.php` file by `add_image_size()`, use the custom name from the `add_image_size()` function as an argument for `the_post_thumbnail()` function
+12. To use your custom image files that are defined in the `functions.php` file by `add_image_size()`, use the custom name from the `add_image_size()` function as an argument for `the_post_thumbnail()` and `the_post_thumbnail_url()` functions
 
 ```php
 <div>
   <?php the_post_thumbnail('professorPortrait'); ?>
+  <img class="professor-card__image" src="<?php the_post_thumbnail_url('professorLandscape'); ?>">
 </div>
 ```
