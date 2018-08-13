@@ -80,8 +80,8 @@ You can define a function in your `functions.php` file and use it throughout all
     the_post();
     
     pageBanner(array(
-      'title' => '',
-      'subtitle' => '',
+      'title' => 'This is the title',
+      'subtitle' => 'Put subtitle here',
       'photo' => 'https://png.pngtree.com/thumb_back/fw800/back_pic/00/06/31/695628f664c006c.jpg'
     ));
     ?>
