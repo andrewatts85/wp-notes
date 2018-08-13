@@ -96,3 +96,8 @@ add_action('after_setup_theme', 'university_features');
   <img class="professor-card__image" src="<?php the_post_thumbnail_url('professorLandscape'); ?>">
 </div>
 ```
+
+## How to Crop and Position Featured Images w/ Manual Image Crop Plugin
+
+13. Download and activate Manual Image Crop Plugin
+14. Now you can navigate to a post with a Featured Image and click `Crop featured image` in the side widget to crop the image
