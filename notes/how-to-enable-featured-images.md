@@ -55,3 +55,9 @@ add_action('init', 'university_post_types');
   </div>
 </div>
 ```
+
+7. You can also use `the_post_thumbnail_url()` as the source for an `<img>` tag and pull in the image that way
+
+```php
+<img src="<?php the_post_thumbnail_url(); ?>">
+```
