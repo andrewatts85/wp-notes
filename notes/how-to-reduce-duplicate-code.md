@@ -107,3 +107,7 @@ get_template_part('template-parts/content', 'event');
 
 get_template_part('template-parts/content', get_post_type());
 ```
+
+## Create a Function VS `get_template_part()`
+
+Create a function when you want to pass the code arguments and make it do stuff like set dynamic backgrounds. If the code doesn't need to change or be dynamic just use `get_template_part()`.
