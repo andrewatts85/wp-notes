@@ -97,5 +97,7 @@ Another way you can recycle parts of your code for reuse is by taking advantage 
 4. The second argument is for a slug you want to add to it. Like `example-excerpt`. You can use this second argument to make it dynamic. It can be useful for a search results feature but you don't need it. One arugment works fine
 
 ```php
+<?php get_template_part('template-parts/example'); ?>
+// one argument or two works fine
 <?php get_template_part('template-parts/example', 'excerpt'); ?>
 ```
