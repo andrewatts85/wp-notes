@@ -98,6 +98,8 @@ Another way you can recycle parts of your code for reuse is by taking advantage 
 
 ```php
 <?php get_template_part('template-parts/example'); ?>
+
 // one argument or two works fine
+
 <?php get_template_part('template-parts/example', 'excerpt'); ?>
 ```
