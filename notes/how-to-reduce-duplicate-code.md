@@ -94,12 +94,16 @@ Another way you can recycle parts of your code for reuse is by taking advantage 
 1. To set this up just create a new folder in your WordPress theme project folder and name it `template-parts`
 2. Create a new file with the code that you want to recycle and name it whatever you like (content.php)
 3. Now you can recycle the code you saved in that file and use it throughout your WordPress site. Use `get_template_part()` by inserting the file name you want to use as the parameter then call the function wherever you please
-4. The second argument is for a slug you want to add to it. Like `content-event`. You can use this second argument to make it dynamic. It can be useful for a search results feature but you don't need it. One arugment works fine
+4. The second argument is for a slug you want to add to it. Like `content-event`. You can use this second argument w/ `get_post_type()` to make it dynamic as an example. It can be useful for a search results feature but you don't need it. One arugment works fine
 
 ```php
-<?php get_template_part('template-parts/content'); ?>
+<?php 
+
+get_template_part('template-parts/content');
 
 // one argument or two works fine
 
-<?php get_template_part('template-parts/content', 'event'); ?>
+get_template_part('template-parts/content', 'event');
+
+get_template-part('template-parts/content', get_post_type());
 ```
