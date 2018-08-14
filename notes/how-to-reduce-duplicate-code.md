@@ -86,3 +86,15 @@ You can define a function in your `functions.php` file and use it throughout all
     ));
     ?>
 ```
+
+## Reduce Duplication w/ `get_template_part()`
+
+Another way you can recycle parts of your code for reuse is by taking advantage of the `get_template_part()` function
+
+1. To set this up just create a new folder in your WordPress theme project folder and name it `template-parts`
+2. Create a new file with the code that you want to recycle and name it whatever you like (example.php)
+3. Now you can recycle the code you saved in that file and use it throughout your WordPress site. Use `get_template_part()` by inserting the file name you want to use as the parameter then call the function wherever you please
+
+```php
+<?php get_template_part('template-parts/example'); ?>
+```
