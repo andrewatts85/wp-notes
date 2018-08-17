@@ -74,3 +74,26 @@ add_action('wp_enqueue_scripts', 'university_files');
 
 11. Since we are using the `Advanced Custom Fields` plugin, we need to refer to their [documentation](https://www.advancedcustomfields.com/resources/google-map/) so we can create the JavaScript file from their JS template and put it in our theme. Keep in mind some minor adjustments will need to be made to the code to get it to work but nothing major.
 
+12. Once the JavaScript file is created, import it to your `scripts.js` file so WordPress can access it.
+
+```javascript
+// 3rd party packages from NPM
+import $ from 'jquery';
+import slick from 'slick-carousel';
+
+// Our modules / classes
+import MobileMenu from './modules/MobileMenu';
+import HeroSlider from './modules/HeroSlider';
+import GoogleMap from './modules/GoogleMap'; // import GoogleMap.js here
+
+// Instantiate a new object using our modules/classes
+var mobileMenu = new MobileMenu();
+var heroSlider = new HeroSlider();
+var googleMap = new GoogleMap(); // initiate a new class of GoogleMap
+```
+
+13. Now we need to use the command line to rebundle all the JavaScript files.
+
+14. `cd` to the correct path that holds `gulpfile.js`, `package.json`, `settings.js`, `webpack.config.js`. If using local-by-flywheel the path will probably look like this `local sites => custom-theme-name => app => public`
+
+15. Then just run `gulp watch` again and save your changes or run `gulp scripts` to rebundle your JS files.
