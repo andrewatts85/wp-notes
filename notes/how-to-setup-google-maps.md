@@ -46,3 +46,31 @@ add_filter('acf/fields/google_map/api', 'universityMapKey');
 </div>
 ```
 
+## How to Load a JavaScript File on the Frontend in WordPress
+
+8. Navigate to `functions.php` and find the functions that controls `wp_head()` in `header.php`. The action hook will be `wp_enqueue_scripts' which is used to load JavaScript files.  
+
+9. Refer to the code below to add a JavaScript file. You can add as many JavaScript files you want. 
+
+10. The second argument for `wp_enqueue_script()` will be the google url for the api call which is  `//maps.googleapis.com/maps/api/js?key=` + `INSERT YOUR API_KEY HERE`. This is where you will also enter your API_KEY.
+
+```php
+// This function controls `wp_head()` in `header.php`
+function university_files() {
+  // JavaScript files
+  wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=AIzaSyAi4HJI-1B_oIRoVWeqdQS4nZYrrXchCrw', NULL, microtime(), true);
+  wp_enqueue_script('main_university_js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, microtime(), true);
+  
+  // CSS styles
+  wp_enqueue_style('google_fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+  wp_enqueue_style('font_awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+  wp_enqueue_style('university_main_styles', get_stylesheet_uri(), NULL, microtime());
+}
+
+add_action('wp_enqueue_scripts', 'university_files');
+```
+
+## How to Feed Our Lat and Lng Values Into the Google Maps Script
+
+11. Since we are using the `Advanced Custom Fields` plugin, we need to refer to their [documentation](https://www.advancedcustomfields.com/resources/google-map/) so we can create the JavaScript file from their JS template and put it in our theme. Keep in mind some minor adjustments will need to be made to the code to get it to work but nothing major.
+
