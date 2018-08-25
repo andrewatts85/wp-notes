@@ -97,3 +97,27 @@ var googleMap = new GoogleMap(); // initiate a new class of GoogleMap
 14. `cd` to the correct path that holds `gulpfile.js`, `package.json`, `settings.js`, `webpack.config.js`. If using local-by-flywheel the path will probably look like this `local sites => custom-theme-name => app => public`
 
 15. Then just run `gulp watch` again and save your changes or run `gulp scripts` to rebundle your JS files.
+
+## How to Add a Custom Tooltip
+
+16. To add a custom tooltip to our map location points just put your html markup in the `<div class="marker">` div.
+
+```php
+<div class="acf-map">
+  <?php
+    while(have_posts()) {
+      the_post();
+        $mapLocation = get_field('map_location');
+      ?>
+      <div class="marker" data-lat="<?php echo $mapLocation['lat']; ?>" data-lng="<?php echo $mapLocation['lng']; ?>">
+        
+        <!-- custom markup here will show up on our map in a tooltip -->
+        <h3><?php the_title(); ?></h3>
+        <?php echo $mapLocation['address']; ?>
+        
+      </div>
+    <?php }
+    echo paginate_links();
+  ?>
+</div>
+```
