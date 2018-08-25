@@ -113,6 +113,7 @@ var googleMap = new GoogleMap(); // initiate a new class of GoogleMap
         
         <!-- custom markup here will show up on our google map as a tooltip -->
         <h3><?php the_title(); ?></h3>
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <?php echo $mapLocation['address']; ?>
         
       </div>
