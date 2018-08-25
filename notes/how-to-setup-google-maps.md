@@ -111,7 +111,7 @@ var googleMap = new GoogleMap(); // initiate a new class of GoogleMap
       ?>
       <div class="marker" data-lat="<?php echo $mapLocation['lat']; ?>" data-lng="<?php echo $mapLocation['lng']; ?>">
         
-        <!-- custom markup here will show up on our map in a tooltip -->
+        <!-- custom markup here will show up on our google map as a tooltip -->
         <h3><?php the_title(); ?></h3>
         <?php echo $mapLocation['address']; ?>
         
