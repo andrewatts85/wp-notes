@@ -26,8 +26,8 @@ A good place to put the html for the overlay would be at he bottom of the `foote
   </body>
 </html>
 ```
-
-## OOP with JavaScript Classes
+## Search Logic
+#### OOP with JavaScript Classes
 
 ```javascript
 import $ from 'jquery';
