@@ -26,7 +26,7 @@ A good place to put the html for the overlay would be at he bottom of the `foote
   </body>
 </html>
 ```
-## Search Logic
+## Search Overlay Logic
 #### OOP with JavaScript Classes
 
 ```javascript
