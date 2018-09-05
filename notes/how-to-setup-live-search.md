@@ -34,6 +34,7 @@ import $ from 'jquery';
 
 class Search {
   // 1. describe and create/initiate our object
+  // set up your variables and assign the elements you need to add events to here *****
   constructor() {
     this.resultsDiv = $('#search-overlay__results');
     this.openButton = $('.js-search-trigger');
@@ -48,6 +49,7 @@ class Search {
   }
 
   // 2. events
+  // declare your events here *****
   events() {
     this.openButton.on('click', this.openOverlay.bind(this));
     this.closeButton.on('click', this.closeOverlay.bind(this));
@@ -56,6 +58,7 @@ class Search {
   }
 
   // 3. methods (funtion, action...)
+  // write out your methods here, add and remove classes from the desired elements when an event occurs *****
   typingLogic() {
     if (this.searchField.val() != this.previousValue) {
       clearTimeout(this.typingTimer);
