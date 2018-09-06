@@ -80,8 +80,12 @@ class Search {
   }
 
   getResults() {
-    this.resultsDiv.html('Imagine real search results here...');
-    this.isSpinnerVisible = false;
+    $.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), function(posts) {
+      alert(posts[0].title.rendered);
+    });
+
+    // this.resultsDiv.html('Nothing found...');
+    // this.isSpinnerVisible = false;
   }
 
   keyPressDispatcher(e) {
@@ -110,4 +114,7 @@ class Search {
 export default Search;
 ```
 
-## 
+## Get JSON Data with `/wp-json`
+
+* `site url` + `/wp-json/wp/v2/posts` will pull in json data for the 10 most recent posts
+* `site url` + `/wp-json/wp/v2/pages` will pull in json data for the 10 most recent pages
