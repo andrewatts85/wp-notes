@@ -137,3 +137,26 @@ getResults() {
   });
 }
 ```
+
+## How to Make the HTTP Request URL Dynamic
+When making an http request we need to make sure that the root url is dynamic. `http://localhost:3000/` will not work in a production environment. To fix this problem we need to edit our `functions.php` file and use the `wp_localize_script()` method. This method accepts 3 arguments and attaches to the WordPress `wp_engueue_scripts` hook.
+
+`wp_localize_script(1,2,3)`
+1. The first parameter needs the name of the script that it will be outputted to
+2. The second argument just needs a variable name that you can make up
+3. The third argument is for an associative array that you want to make available
+
+Next add the property `'root_url' => get_site_url()` to the associative array.
+
+```php
+// This function controls `wp_head()` in `header.php`
+function university_files() {
+  wp_enqueue_script('main_university_js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, microtime(), true);
+  wp_localize_script('main_university_js', 'universityData', array(
+    'root_url' => get_site_url()
+  ));
+}
+
+add_action('wp_enqueue_scripts', 'university_files');
+```
+
