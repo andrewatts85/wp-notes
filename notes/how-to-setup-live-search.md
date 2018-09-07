@@ -78,14 +78,17 @@ class Search {
 
     this.previousValue = this.searchField.val();
   }
-
+  
+  // jQuery is used to work with WP REST API here
   getResults() {
-    $.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), function(posts) {
-      alert(posts[0].title.rendered);
+    $.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
+      this.resultsDiv.html(`
+        <h2 class="search-overlay__section-title">General Information</h2>
+        <ul class="link-list min-list">
+          ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+        </ul>
+      `);
     });
-
-    // this.resultsDiv.html('Nothing found...');
-    // this.isSpinnerVisible = false;
   }
 
   keyPressDispatcher(e) {
@@ -116,5 +119,21 @@ export default Search;
 
 ## Get JSON Data with `/wp-json`
 
-* `site url` + `/wp-json/wp/v2/posts` will pull in json data for the 10 most recent posts
-* `site url` + `/wp-json/wp/v2/pages` will pull in json data for the 10 most recent pages
+By using ajax or javascript's fetch api you can pull in json data with http request.
+
+* `root url` + `/wp-json/wp/v2/posts` will pull in json data for the 10 most recent posts
+* `root url` + `/wp-json/wp/v2/pages` will pull in json data for the 10 most recent pages
+
+```javascript
+// jQuery is used to work with WP REST API here
+getResults() {
+  $.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
+    this.resultsDiv.html(`
+      <h2 class="search-overlay__section-title">General Information</h2>
+      <ul class="link-list min-list">
+        ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+      </ul>
+    `);
+  });
+}
+```
