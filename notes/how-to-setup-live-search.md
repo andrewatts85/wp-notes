@@ -167,3 +167,17 @@ If you right click on the front page of your WordPress site and then click `view
 var universityData = {"root_url":"http:\/\/localhost:3000"};
 /* ]]> */
 ```
+
+Now we can replace `http://localhost:3000/` with `universityData.root_url` like so to make our url relative that will work on a live server. Remember that `universityData` is the variable name we made up when we initialized the `wp_localize_script()` method.
+
+```
+getResults() {
+$.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
+  this.resultsDiv.html(`
+    <h2 class="search-overlay__section-title">General Information</h2>
+    <ul class="link-list min-list">
+      ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+    </ul>
+  `);
+})}
+```
