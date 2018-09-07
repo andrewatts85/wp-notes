@@ -181,3 +181,67 @@ $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.search
   `);
 })}
 ```
+
+## How to Include HTML Markup in Your `Search.js` File
+
+Just add a function to your `search.js` file like so. Don't forget to call it in your `constructor()` at the top or your other variables in the `constructor()` won't work.
+
+```javascript
+class Search {
+    constructor() {
+      this.addSearchHTML();
+      this.resultsDiv = $('#search-overlay__results');
+      this.openButton = $('.js-search-trigger');
+      this.closeButton = $('.search-overlay__close');
+      this.searchOverlay = $('.search-overlay');
+      this.searchField = $('#search-term');
+      this.events();
+      this.isOverlayOpen = false;
+      this.isSpinnerVisible = false;
+      this.previousValue;
+      this.typingTimer;
+    }
+
+    // add html to bottom of page w/ javascript, call in the constructor
+    addSearchHTML() {
+      $('body').append(`
+        <div class="search-overlay">
+          <div class="search-overlay__top">
+            <div class="container">
+              <i class="fa fa-search search-overlay__icon" aria-hidden="true"></i>
+              <input type="text" class="search-term" placeholder="What are you looking for?" id="search-term" />
+              <i class="fa fa-window-close search-overlay__close" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="search-overlay__results"></div>
+          </div>
+        </div>
+      `);
+    }
+}
+```
+
+## How to Add Search Functionality to both Pages and Posts
+
+To include all pages as well as posts in the search results you can nest the api calls within each, although it is not ideal because it takes a lot of time and could harm the user experience.
+
+```javascript
+getResults() {
+  $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
+    $.getJSON(universityData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val(), pages => {
+      // combine the results by concatinating both arrays together  
+      var combinedResults = posts.concat(pages);
+      this.resultsDiv.html(`
+        <h2 class="search-overlay__section-title">General Information</h2>
+        ${combinedResults.length ? '<ul class="link-list min-list">' : '<p>No general information matches that search.</p>'}
+          ${combinedResults.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+        ${combinedResults.length ? '</ul>' : ''}
+        </ul>
+      `);
+      this.isSpinnerVisible = false;
+    });
+  });
+}
+```
