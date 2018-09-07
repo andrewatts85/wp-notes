@@ -227,6 +227,7 @@ class Search {
 
 To include all pages as well as posts in the search results you can nest the api calls within each, although it is not ideal because it takes a lot of time and could harm the user experience.
 
+### Synchronous - each JSON request waits to be completed before the next request is made.
 ```javascript
 getResults() {
   $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
@@ -243,5 +244,30 @@ getResults() {
       this.isSpinnerVisible = false;
     });
   });
+}
+```
+
+### Asynchronous - each JSON request is performed simultaneously.
+
+In `$.when()` we can include any JSON request and they will all run asynchronously. In `$.then()` we can put in what we want to do once all of the JSON request have been completed. `$.when(1,2,3).then(one,two,three)` be sure to include matching parameters for `$.when()` and `$.then()` so the returned data can be mapped to the matching parameters for `$.then()`
+
+```javascript
+getResults() {
+ $.when(
+   $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val()), 
+   $.getJSON(universityData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val())
+ ).then((posts, pages) => {
+   var combinedResults = posts[0].concat(pages[0]);
+   this.resultsDiv.html(`
+     <h2 class="search-overlay__section-title">General Information</h2>
+     ${combinedResults.length ? '<ul class="link-list min-list">' : '<p>No general information matches that search.</p>'}
+       ${combinedResults.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+     ${combinedResults.length ? '</ul>' : ''}
+     </ul>
+   `);
+   this.isSpinnerVisible = false;
+ }, () => {
+   this.resultsDiv.html('<p>Unexpected error; please try again.</p>');
+ });
 }
 ```
