@@ -133,3 +133,138 @@ function universitySearchResults() {
 // http://localhost:3000/wp-json/university/v1/search
 ```
 
+## How to Setup Keyword Searches (WP_Query)
+
+1. To add keyword searches navigate to your `incudes` folder and open `search-route.php`
+2. Where going to add a `data` parameter to `universitySearchResults()` along with another array property `'s' => sanitize_text_field($data['term'])` to the `$professors` query
+3. Refer to the code and comments below 
+
+```php
+<?php
+
+add_action('rest_api_init', 'universityRegisterSearch');
+
+function universityRegisterSearch() {
+  register_rest_route('university/v1', 'search', array(
+    'methods' => WP_REST_SERVER::READABLE, // use this instead if you want to go the extra mile. Will make sure that it works on any web host out there
+    'callback' => 'universitySearchResults' // Make up a usefull function name then create a function with that name below
+  ));
+}
+
+function universitySearchResults($data) {
+  // custome queries are useful for getting data
+  $professors = new WP_Query(array(
+    'post_type' => 'professor',
+    // sanatize-text_field prevents hacking through user inputs, that is why we wrap the $data parameter with it
+    's' => sanitize_text_field($data['term']) // we can access any parameter added to the url with this, s stand for search
+  ));
+
+  // return $professors->posts; // will return the 10 most recent posts for professors. You can stop right here or use the code below instead to display the exact data that you want
+
+  // put the data you want into this array for access later as a custom JSON data
+  $professorResults = array();
+
+  // now run the famous wordpress loop
+  while($professors->have_posts()) {
+    $professors->the_post();
+
+    // first arg is the array you want to add on too
+    // second arg is what you want to add onto the array
+    array_push($professorResults, array(
+      'title' => get_the_title(),
+      'permalink' => get_the_permalink()
+    ));
+  }
+
+  return $professorResults;
+}
+
+// Now save the file and test out your new url
+// http://localhost:3000/wp-json/university/v1/search
+```
+
+## How to Setup Keyword Searches for Multple Post-Types
+
+To query for multiple post-types, edit the `$professors` query inside the `universitySearchResults($data)` function to use an array and list the post-types that you want to include. Refer to the code and comments below.
+
+```php
+$professors = new WP_Query(array(
+  'post_type' => array('post', 'page', 'professor'), // this will setup keyword searches for multiple posts
+  // sanatize-text_field prevents hacking through user inputs, that is why we wrap the $data parameter with it
+  's' => sanitize_text_field($data['term']) // we can access any parameter added to the url with this, s stand for search
+));
+```
+
+You can check your JSON DATA with this type of url `http://localhost:3000/wp-json/university/v1/search?term=about` the term is equal to whatever is in the search field when executed. You should be able to search all your data in WP with this.
+
+[Section 15, Lecture 64](https://www.udemy.com/become-a-wordpress-developer-php-javascript/learn/v4/t/lecture/7909630?start=0)
+
+```php
+<?php
+
+add_action('rest_api_init', 'universityRegisterSearch');
+
+function universityRegisterSearch() {
+  register_rest_route('university/v1', 'search', array(
+    'methods' => WP_REST_SERVER::READABLE,
+    'callback' => 'universitySearchResults'
+  ));
+}
+
+function universitySearchResults($data) {
+  $mainQuery = new WP_Query(array(
+    'post_type' => array('post', 'page', 'professor', 'program', 'campus', 'event'),
+  ));
+
+  $results = array(
+    'generalInfo' => array(),
+    'professors' => array(),
+    'programs' => array(),
+    'events' => array(),
+    'campuses' => array()
+  );
+
+  while($mainQuery->have_posts()) {
+    $mainQuery->the_post();
+
+    if (get_post_type() == 'post' OR get_post_type() == 'page') {
+      array_push($results['generalInfo'], array(
+        'title' => get_the_title(),
+        'permalink' => get_the_permalink()
+      ));
+    }
+
+    if (get_post_type() == 'professor') {
+      array_push($results['professors'], array(
+        'title' => get_the_title(),
+        'permalink' => get_the_permalink()
+      ));
+    }
+
+    if (get_post_type() == 'program') {
+      array_push($results['programs'], array(
+        'title' => get_the_title(),
+        'permalink' => get_the_permalink()
+      ));
+    }
+
+    if (get_post_type() == 'campus') {
+      array_push($results['campuses'], array(
+        'title' => get_the_title(),
+        'permalink' => get_the_permalink()
+      ));
+    }
+
+    if (get_post_type() == 'event') {
+      array_push($results['events'], array(
+        'title' => get_the_title(),
+        'permalink' => get_the_permalink()
+      ));
+    }
+
+  }
+
+  return $results;
+}
+
+```
