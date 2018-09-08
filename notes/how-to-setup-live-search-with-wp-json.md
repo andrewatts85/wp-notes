@@ -1,4 +1,4 @@
-# How to Setup Live Search
+# How to Setup Live Search w/ WP-JSON
 
 Live search means to have the results pop up instantly instead of a traditional search that takes the user to a whole different web page with the search result displayed. 
 
@@ -404,3 +404,28 @@ class Search {
 
 export default Search;
 ```
+
+## How to Customize Raw JSON Data
+
+1. Navigate to `functions.php`
+2. Setup your function like so
+
+```php
+function university_custom_rest() {
+  // first arg is the post type you want to customize
+  // second arg is whatever you want to name the new property
+  // third arg is an array that describes how we want to manage this property
+  register_rest_field('post', 'authorName', array(
+    'get_callback' => function() {get_the_author();}
+  ));
+  
+  // you can add another property to your JSON data here also
+  register_rest_field('post', 'perfecltyCroppedImageURL', array(
+    'get_callback' => function() {return 'If you can achieve it with php, you can return that property here';}
+  ));
+}
+add_action('rest_api_init', 'university_custom_rest');
+```
+
+3. Now you can make an another http request by entering the url `http://localhost:3000/wp-json/wp/v2/posts` into postman or chrome and seeing if the `authorName: Super Amazing Author Name` property shows up in the returned JSON
+
