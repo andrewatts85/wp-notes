@@ -77,7 +77,7 @@ function universitySearchResults() {
   return 'Congratulations, you created a route.';
 }
 
-// Now save file and test out your new url
+// Now save the file and test out your new url
 // http://localhost:3000/wp-json/university/v1/search
 
 ?>
