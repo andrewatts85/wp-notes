@@ -1,4 +1,4 @@
-# How to Setup Live Search w/ WP-JSON
+# How to Setup Live Search w/ WP Rest API
 
 Live search means to have the results pop up instantly instead of a traditional search that takes the user to a whole different web page with the search result displayed. 
 
