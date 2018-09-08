@@ -74,6 +74,7 @@ function universityRegisterSearch() {
 }
 
 function universitySearchResults() {
+  // this is where WP will determine what kind of JSON data will be served
   return 'Congratulations, you created a route.';
 }
 
@@ -83,3 +84,52 @@ function universitySearchResults() {
 ?>
 
 ```
+
+## How to Create Your Own Raw JSON Data
+
+1. Look in your `includes` folder and open `search-route.php`
+2. Note: WordPress will automatically convert php data to JSON data by itself
+3. Refer to the following code and comments
+
+```php
+<?php
+
+add_action('rest_api_init', 'universityRegisterSearch');
+
+function universityRegisterSearch() {
+  register_rest_route('university/v1', 'search', array(
+    'methods' => WP_REST_SERVER::READABLE, // use this instead if you want to go the extra mile. Will make sure that it works on any web host out there
+    'callback' => 'universitySearchResults' // Make up a usefull function name then create a function with that name below
+  ));
+}
+
+function universitySearchResults() {
+  // custome queries are useful for getting data
+  $professors = new WP_Query(array(
+    'post_type' => 'professor'
+  ));
+
+  // return $professors->posts; // will return the 10 most recent posts for professors. You can stop right here or use the code below instead to display the exact data that you want
+
+  // put the data you want into this array for access later as a custom JSON data
+  $professorResults = array();
+
+  // now run the famous wordpress loop
+  while($professors->have_posts()) {
+    $professors->the_post();
+
+    // first arg is the array you want to add on too
+    // second arg is what you want to add onto the array
+    array_push($professorResults, array(
+      'title' => get_the_title(),
+      'permalink' => get_the_permalink()
+    ));
+  }
+
+  return $professorResults;
+}
+
+// Now save the file and test out your new url
+// http://localhost:3000/wp-json/university/v1/search
+```
+
