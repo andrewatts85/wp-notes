@@ -183,7 +183,7 @@ function universitySearchResults($data) {
 // http://localhost:3000/wp-json/university/v1/search
 ```
 
-## How to Setup Keyword Searches for Multple Post-Types
+## How to Setup Keyword Searches for Multiple Post-Types
 
 To query for multiple post-types, edit the `$professors` query inside the `universitySearchResults($data)` function to use an array and list the post-types that you want to include. Refer to the code and comments below.
 
@@ -214,6 +214,7 @@ function universityRegisterSearch() {
 function universitySearchResults($data) {
   $mainQuery = new WP_Query(array(
     'post_type' => array('post', 'page', 'professor', 'program', 'campus', 'event'),
+    's' => sanitize_text_field($data['term'])
   ));
 
   $results = array(
