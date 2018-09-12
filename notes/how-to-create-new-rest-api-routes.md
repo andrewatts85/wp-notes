@@ -190,8 +190,8 @@ To query for multiple post-types, edit the `$professors` query inside the `unive
 ```php
 $professors = new WP_Query(array(
   'post_type' => array('post', 'page', 'professor'), // this will setup keyword searches for multiple posts
-  // sanatize-text_field prevents hacking through user inputs, that is why we wrap the $data parameter with it
-  's' => sanitize_text_field($data['term']) // we can access any parameter added to the url with this, s stand for search
+  // sanatize_text_field prevents hacking through user inputs, that is why we wrap the $data parameter with it
+  's' => sanitize_text_field($data['term']) // we can access any parameter added to the url with this, s stands for search
 ));
 ```
 
