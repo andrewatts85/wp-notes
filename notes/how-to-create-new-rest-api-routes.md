@@ -275,6 +275,7 @@ function universitySearchResults($data) {
 In your `search.js` file in your JS modules folder, you can use custom html markup in the `results` function using template strings.
 
 ```javascript
+// search.js
 import $ from 'jquery';
 
 class Search {
