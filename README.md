@@ -26,8 +26,8 @@
 24. [How to setup a dynamic background image](notes/how-to-setup-a-dynamic-background-image.md)  
 25. [How to reduce duplicate code](notes/how-to-reduce-duplicate-code.md)  
 26. [How to setup google maps](notes/how-to-setup-google-maps.md)  
-27. [How to setup live search with WP rest api](/how-to-setup-live-search-with-wp-rest-api.md)  
-28. [How to create new rest api routes](/how-to-create-new-rest-api-routes.md)  
+27. [How to setup live search with WP rest api](notes/how-to-setup-live-search-with-wp-rest-api.md)  
+28. [How to create new rest api routes](notes/how-to-create-new-rest-api-routes.md)  
 29. 
 
 
