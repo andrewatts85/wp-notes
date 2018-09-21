@@ -221,7 +221,7 @@ function universitySearchResults($data) {
     }
 
     $programRelationshipQuery = new WP_Query(array(
-      // use 'post_type' => array('professor', 'event') for multiple post-types
+      // use 'post_type' => array('professor', 'event') for multiple post-types and create another if block for each post-type in the while loop
       'post_type' => 'professor',
       // you can search based on a value of a custom field with meta_query
       // you can string together multiple filters with each nested array which will be nested in the outer array
