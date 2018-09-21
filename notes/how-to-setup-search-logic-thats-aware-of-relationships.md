@@ -221,7 +221,9 @@ function universitySearchResults($data) {
     }
 
     $programRelationshipQuery = new WP_Query(array(
-      // use 'post_type' => array('professor', 'event') for multiple post-types and create another if block for each post-type in the while loop
+      // use 'post_type' => array('professor', 'event') for multiple post-types and create another if block for each post-type in the while loop. 
+      // You would just grab the above if block for event and add it to the while loop below. 
+      // Dont forget to remove duplicates for each post-type
       'post_type' => 'professor',
       // you can search based on a value of a custom field with meta_query
       // you can string together multiple filters with each nested array which will be nested in the outer array
@@ -243,6 +245,7 @@ function universitySearchResults($data) {
     // remove duplicates with array_unique('your target array', 'a func that tells it to play nice with associat arrays')
     // to get rid of the added array keys (numbers) wrap the array in array_values()
     $results['professors'] = array_values(array_unique($results['professors'], SORT_REGULAR));
+    // $results['events'] = array_values(array_unique($results['events'], SORT_REGULAR));
   }
 
   return $results;
