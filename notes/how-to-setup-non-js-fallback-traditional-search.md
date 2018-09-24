@@ -32,4 +32,24 @@ $searchTerm = 'biology';
 8. `echo site_url('/')` will generate the homepage url for our WordPress installation
 9. **WordPress Security Tip:** Whenever you manually echo a url coming from your database you should wrap it in `esc_url()`
 10. Using a `method="get"` instead of post will make sure the contents of the form end up in the url
-11. 
+11. Now wherever your search button is in your WordPress theme, you can link it to the `search` page you just created
+
+```php
+<a href="<?php echo esc_url(site_url('/search')); ?>">Search</a>
+```
+
+12. Now open your `search.js` file. We need to make sure to use this search if JavaScript is disabled.
+13. Go down to your `openOverlay()` function and add `return false;` at the bottom. This will prevent the default behavior of `<a>` or link elements
+
+```javascript
+openOverlay() {
+  this.searchOverlay.addClass('search-overlay--active');
+  $("body").addClass("body-no-scroll");
+  this.searchField.val('');
+  setTimeout(() => this.searchField.focus(), 301);
+  this.isOverlayOpen = true;
+  return false;
+}
+```
+
+14. 
