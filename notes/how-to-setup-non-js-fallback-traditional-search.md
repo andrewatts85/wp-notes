@@ -52,4 +52,22 @@ openOverlay() {
 }
 ```
 
-14. 
+## Power Your Search Results Page with `search.php`
+
+This traditional search method is powered by `index.php`. If you have a file called `search.php` in your WordPress theme, WordPress will you that instead of `index.php` to power your search page.
+
+14. Create a file called `search.php` in your WordPress theme
+15. Copy the contents of `index.php` into `search.php` then customize the page to your liking
+16. The method `get_search_query()` will return the search term that was inputed by the user
+
+```php
+<?php
+  get_header();
+  pageBanner(array(
+    'title' => 'Search Results',
+    'subtitle' => 'You searched for &ldquo;' . get_search_query() . '&rdquo;'
+  ));
+?>
+```
+
+17. Use `esc_html(get_search_query(false))` instead when outputting as html [Traditional WordPress Searching (Part 2) section 17 lectur 71](https://www.udemy.com/become-a-wordpress-developer-php-javascript/learn/v4/t/lecture/8007378?start=15)
