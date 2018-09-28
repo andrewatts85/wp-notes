@@ -1,8 +1,5 @@
 ## How To Setup Non-JS Fallback Traditional Search
 
-### search.php
-
-
 ### Fallback Search URL
 
 You can search a wordpress site by adding `/?s=` plus the search term to the end of the root url.
