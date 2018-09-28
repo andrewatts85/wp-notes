@@ -1,6 +1,6 @@
 ## How To Setup Non-JS Fallback Traditional Search
 
-### Fallback Search URL
+## Fallback Search URL
 
 You can search a wordpress site by adding `/?s=` plus the search term to the end of the root url.
 
@@ -69,5 +69,9 @@ This traditional search method is powered by `index.php`. If you have a file cal
 
 17. Use `esc_html(get_search_query(false))` instead when outputting as html - [Traditional WordPress Searching (Part 2) section 17 lectur 71](https://www.udemy.com/become-a-wordpress-developer-php-javascript/learn/v4/t/lecture/8007378?start=15)
 
+### `searchform.php`
+
 18. `searchform.php`
 19. `get_search_form()`
+
+You can create a file in your WordPress theme named `searchform.php` with markup for a form and then use `get_search_form()` to apply it anywhere in your WordPress site.
