@@ -1,4 +1,4 @@
-## How To Setup Non-JS Fallback Traditional Search
+# How To Setup Non-JS Fallback Traditional Search
 
 ## Fallback Search URL
 
