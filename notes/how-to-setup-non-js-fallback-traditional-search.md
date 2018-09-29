@@ -71,7 +71,7 @@ This traditional search method is powered by `index.php`. If you have a file cal
 
 ### `searchform.php`
 
+You can create a file in your WordPress theme named `searchform.php` with markup for a form and then use `get_search_form()` to apply it anywhere in your WordPress site.
+
 18. `searchform.php`
 19. `get_search_form()`
-
-You can create a file in your WordPress theme named `searchform.php` with markup for a form and then use `get_search_form()` to apply it anywhere in your WordPress site.
